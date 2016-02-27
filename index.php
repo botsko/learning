@@ -1,1 +1,3 @@
-# learning
+<?php
+echo "прив"
+?>
