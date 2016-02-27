@@ -17,5 +17,11 @@ if (isset($_REQUEST["calc"])) {
         case '/':
             $result = $a / $b;
             break;
+        case '^':
+            $result = pow($a,$b);
+            break;
+        case '%':
+            $result = $a % $b;
+            break;
     }
 }

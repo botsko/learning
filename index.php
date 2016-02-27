@@ -11,10 +11,11 @@ include 'handler.php'
     </label>
     <label>
         <select name="operation">
-            <option <?=$_REQUEST['operation']=='+'?'selected="selected"': ''?> value="+">+</option>
-            <option <?=$_REQUEST['operation']=='-'?'selected="selected"': ''?>value="-">-</option>
-            <option <?=$_REQUEST['operation']=='*'?'selected="selected"': ''?>value="*">*</option>
-            <option <?=$_REQUEST['operation']=='/'?'selected="selected"': ''?> value="/">/</option>
+            <?php foreach (['+', '-', '*', '/','^','%'] as $item) { ?>
+                <option <?= $_REQUEST['operation'] == $item ? 'selected="selected"' : '' ?>
+                    value="<?= $item ?>"><?= $item ?></option>
+            <?php } ?>
+
         </select>
     </label>
     <label>
