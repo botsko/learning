@@ -18,10 +18,19 @@ if (isset($_REQUEST["calc"])) {
             $result = $a / $b;
             break;
         case '^':
-            $result = pow($a,$b);
+            $result = pow($a, $b);
             break;
         case '%':
             $result = $a % $b;
             break;
     }
+}
+
+if (isset($_REQUEST ["step"])) {
+    $a = $_REQUEST['a'];
+    $result = [];
+    for ($i = 1; $i <= 10; $i++) {
+        $result [$i - 1] = pow($a, $i);
+    }
+    $result = implode(',', $result);
 }
