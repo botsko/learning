@@ -55,12 +55,24 @@ if (isset($_REQUEST ["forma"])) {
     $a = ($_REQUEST ['a']);
     $b = ($_REQUEST ['b']);
     if ($a > $b) {
-        $result =$a;
+        $result = $a;
     } elseif ($a < $b) {
         $result = $a;
     } else {
         $result = '=';
     }
+};
+if (isset($_REQUEST["color"])) {
+    $sign = $_REQUEST ['sign'];
+    switch ($sign) {
+        case 'red':
+            $result = 'не можна йти, бо піздец буде';
+            break;
+        case 'yellow':
+            $result = 'не можна йти';
+            break;
+        case 'green':
+            $result = 'можна йти';
+            break;
+    }
 }
-
-
